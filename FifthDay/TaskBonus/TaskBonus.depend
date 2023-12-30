@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1703972417 source:e:\hossam\coruses\c++\fifthday\taskbonus\main.cpp
+	<iostream>
+	"Person.h"
+	"Employee.h"
+	"Student.h"
+
+1703972995 source:e:\hossam\coruses\c++\fifthday\taskbonus\src\person.cpp
+	<iostream>
+	"Person.h"
+
+1703971595 e:\hossam\coruses\c++\fifthday\taskbonus\include\person.h
+	<string>
+
+1703971647 source:e:\hossam\coruses\c++\fifthday\taskbonus\src\employee.cpp
+	<iostream>
+	"Employee.h"
+
+1703971610 e:\hossam\coruses\c++\fifthday\taskbonus\include\employee.h
+	<Person.h>
+
+1703972220 source:e:\hossam\coruses\c++\fifthday\taskbonus\src\student.cpp
+	"Student.h"
+	<iostream>
+
+1703972917 e:\hossam\coruses\c++\fifthday\taskbonus\include\student.h
+	<Person.h>
+

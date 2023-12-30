@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1703967748 source:e:\hossam\coruses\c++\fifthday\task2\main.cpp
+	<iostream>
+	<Base.h>
+	<Drived.h>
+
+1703967138 source:e:\hossam\coruses\c++\fifthday\task2\src\base.cpp
+	"Base.h"
+	<iostream>
+
+1703966667 e:\hossam\coruses\c++\fifthday\task2\include\base.h
+	<iostream>
+
+1703967781 source:e:\hossam\coruses\c++\fifthday\task2\src\drived.cpp
+	"Drived.h"
+	<iostream>
+
+1703967651 e:\hossam\coruses\c++\fifthday\task2\include\drived.h
+	<Base.h>
+

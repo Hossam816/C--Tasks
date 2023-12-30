@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1703762805 source:e:\hossam\coruses\c++\fourthday\task1\main.cpp
+	<iostream>
+	<Testawy.h>
+
+1703761993 e:\hossam\coruses\c++\fourthday\task1\include\testawy.h
+
+1703762946 source:e:\hossam\coruses\c++\fourthday\task1\src\testawy.cpp
+	"Testawy.h"
+	<iostream>
+
