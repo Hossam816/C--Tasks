@@ -7,7 +7,7 @@ using namespace std;
 
 class Base
 {
-    private:
+    protected:
         int X;
         int Y;
     public:
@@ -24,7 +24,7 @@ class Base
         virtual void displayNumbers();
 
 
-        ~Base();
+        virtual ~Base();
 
 
 };

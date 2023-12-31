@@ -24,8 +24,8 @@ int main()
 
 
     ++comp2;
-     cout<<"Real: "<<comp2.getReal()<<endl;
-    cout<<"Imaginary: "<<comp2.getImag()<<endl;
+     cout<<"Real ++: "<<comp2.getReal()<<endl;
+    cout<<"Imaginary ++: "<<comp2.getImag()<<endl;
 
     cout<<"----------------------------"<<endl;
 

@@ -6,6 +6,7 @@
 
 using namespace std;
 
+
 int main()
 {
     Rectangle rect1(9.0, 5.0);
@@ -16,5 +17,12 @@ int main()
     cout << "Rectangle Area = "<< sqr.calcArea()<< endl;
     cout << "Rectangle Area = "<< circle.calcArea()<< endl;
 
-    return 0;
+
+    double areaResult = GeoShape::sumOfAllShapesArea(rect1, circle, sqr);
+
+    cout<<"-----------------------"<<endl;
+    cout<<"Total Area: "<< areaResult<<endl;
+
+
 }
+

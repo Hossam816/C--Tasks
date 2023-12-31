@@ -8,7 +8,7 @@ class Circle: public GeoShape
 {
 
     public:
-        Circle(double radiuLen);
+        Circle(double radiusLen);
 
         double calcArea() override;
 

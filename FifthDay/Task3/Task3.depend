@@ -1,27 +1,26 @@
 # depslib dependency file v1.0
-1703969498 source:e:\hossam\coruses\c++\fifthday\task3\main.cpp
+1704024935 source:e:\hossam\coruses\c++\fifthday\task3\main.cpp
 	<iostream>
 	"GeoShape.h"
 	"Rectangle.h"
 	"Square.h"
 	"Circle.h"
 
-1703969825 source:e:\hossam\coruses\c++\fifthday\task3\src\geoshape.cpp
+1704024875 source:e:\hossam\coruses\c++\fifthday\task3\src\geoshape.cpp
 	"GeoShape.h"
 
-1703969385 e:\hossam\coruses\c++\fifthday\task3\include\geoshape.h
+1704025048 e:\hossam\coruses\c++\fifthday\task3\include\geoshape.h
 
-1703969112 source:e:\hossam\coruses\c++\fifthday\task3\src\circle.cpp
+1704024280 source:e:\hossam\coruses\c++\fifthday\task3\src\circle.cpp
 	"Circle.h"
-	<cmath>
 
-1703969163 e:\hossam\coruses\c++\fifthday\task3\include\circle.h
+1704018417 e:\hossam\coruses\c++\fifthday\task3\include\circle.h
 	"GeoShape.h"
 
 1703968656 source:e:\hossam\coruses\c++\fifthday\task3\src\rectangle.cpp
 	"Rectangle.h"
 
-1703969235 e:\hossam\coruses\c++\fifthday\task3\include\rectangle.h
+1704024199 e:\hossam\coruses\c++\fifthday\task3\include\rectangle.h
 	"GeoShape.h"
 
 1703968969 source:e:\hossam\coruses\c++\fifthday\task3\src\square.cpp

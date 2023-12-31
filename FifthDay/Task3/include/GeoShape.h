@@ -1,12 +1,9 @@
 #ifndef GEOSHAPE_H
 #define GEOSHAPE_H
 
-
-
-
 class GeoShape
 {
-private:
+protected:
     double dim1,dim2;
 
     public:
@@ -15,14 +12,16 @@ private:
         GeoShape(double Dim1, double Dim2);
 
         //Setters
-        void setDim1(double dim1);
-        void setDim2(double dim2);
+        void setDim1(double Dim1);
+        void setDim2(double Dim2);
 
         //Getters
         double getDim1();
         double getDim2();
 
-        virtual double calcArea();
+        virtual double calcArea() = 0;
+        static double sumOfAllShapesArea(GeoShape& rectangle,GeoShape& square, GeoShape& circle);
+
 
         ~GeoShape();
 

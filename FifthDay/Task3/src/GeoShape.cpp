@@ -40,6 +40,10 @@ double GeoShape::calcArea(){
     return 0;
 }
 
+double GeoShape::sumOfAllShapesArea(GeoShape& rectangle, GeoShape& circle,GeoShape& square){
+    return rectangle.calcArea() + circle.calcArea() + square.calcArea();
+}
+
 
 
 GeoShape::~GeoShape()

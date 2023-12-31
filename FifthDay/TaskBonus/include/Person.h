@@ -6,7 +6,7 @@ using namespace std;
 
 class Person
 {
-private:
+protected:
     int ID;
     string Name;
     string Email;
