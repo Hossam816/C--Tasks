@@ -14,8 +14,8 @@ int main()
     Circle circle(3.0);
 
     cout << "Rectangle Area = "<< rect1.calcArea()<< endl;
-    cout << "Rectangle Area = "<< sqr.calcArea()<< endl;
-    cout << "Rectangle Area = "<< circle.calcArea()<< endl;
+    cout << "Square Area = "<< sqr.calcArea()<< endl;
+    cout << "Circle Area = "<< circle.calcArea()<< endl;
 
 
     double areaResult = GeoShape::sumOfAllShapesArea(rect1, circle, sqr);

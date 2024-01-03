@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1704189941 source:e:\hossam\coruses\c++\7thday\task1\main.cpp
+	<iostream>
+	<graphics.h>
+
+1266090614 c:\program files (x86)\codeblocks-ep\sdk\winbgim\include\graphics.h
+	<windows.h>
+	<limits.h>
+	<sstream>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1704196537 source:e:\hossam\coruses\c++\8thday\fileread&write\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+
