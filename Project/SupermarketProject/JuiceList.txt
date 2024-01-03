@@ -1,0 +1,25 @@
+Apple Juice,2.48,50
+Orange Juice,9.48,30
+Grape Juice,3.99,25
+Pineapple Juice,4.50,20
+Mango Juice,5.00,15
+Apple Cider Juice,16.08,36
+Aloe Vera Juice Juice,12.16,27
+Apple Spiced Cider Juice,8.80,65
+Bancha Juice,1.50,5
+Beet Juice,14.00,55
+Blueberry Juice,35.58,70
+Cabbage Juice,24.42,40
+Carrot Juice,4.45,15
+Cherry Juice Juice,4.50,20
+Grape Juice,5.00,15
+Green Pepper Juice,2.48,50
+Limeade Juice,9.48,30
+Grape Juice,3.99,25
+Lemonade Juice,4.50,20
+Sodas Juice,5.00,15
+Sunkist Juice,2.48,50
+Black Cherry Juice,9.48,30
+Grape Juice,3.99,25
+Organic Juice,4.50,20
+Cucumber Juice,5.00,15

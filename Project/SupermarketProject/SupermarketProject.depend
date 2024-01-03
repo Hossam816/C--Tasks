@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1704303049 source:e:\hossam\coruses\c++\project\supermarketproject\main.cpp
+	<iostream>
+	"SuperMarket.h"
+
+1704293174 source:e:\hossam\coruses\c++\project\supermarketproject\src\juice.cpp
+	"juice.h"
+
+1704293154 e:\hossam\coruses\c++\project\supermarketproject\include\juice.h
+	<iostream>
+	<string>
+
+1704302686 source:e:\hossam\coruses\c++\project\supermarketproject\src\supermarket.cpp
+	"SuperMarket.h"
+	<iostream>
+	<algorithm>
+	<fstream>
+	<sstream>
+
+1704301163 e:\hossam\coruses\c++\project\supermarketproject\include\supermarket.h
+	<iostream>
+	<vector>
+	"juice.h"
+
