@@ -1,0 +1,2 @@
+ 2 bashamel1 1000 20
+ 1 bestella 1250 20
