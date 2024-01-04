@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1704328677 source:e:\hossam\coruses\c++\project\project2\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+
+1704303989 source:e:\hossam\coruses\c++\project\project2\src\product.cpp
+	<iostream>
+	"Product.h"
+
+1704303997 e:\hossam\coruses\c++\project\project2\include\product.h
+
