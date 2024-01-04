@@ -18,7 +18,7 @@ class Juice
     //main Constructor
     Juice(string Name,double Price, int Quantity);
 
-    //Setters & Getters
+    //Getters
     string getName();
     double getPrice();
     int getQuantity();

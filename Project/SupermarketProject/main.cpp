@@ -8,11 +8,20 @@ int main()
 {
     SuperMarket superMarket;
 
+    //superMarket.removeJuice("Apple Juice");
+
     Juice appleJuice("Apple Juice", 2.48, 50);
     Juice orangeJuice("Orange Juice", 9.48, 30);
 
+
     superMarket.addJuice(appleJuice);
     superMarket.addJuice(orangeJuice);
+
+    superMarket.displayJuices();
+
+
+
+
     bool searchAgaing = true;
 
     string textInput;
@@ -33,6 +42,7 @@ int main()
         }
 
     }
+
 
     return 0;
 }

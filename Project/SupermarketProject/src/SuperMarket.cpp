@@ -42,11 +42,12 @@ void SuperMarket::searchJuice(string name){
         cout<<"->but you can search for others juices and i hope you will find it"<<endl;
     }
 }
+
 //function use to search in text file to bring data
 void SuperMarket::searchJuiceFile(string name){
     ifstream juicesList("JuiceList.txt");
     if(!juicesList.is_open()){
-        cerr<<"File Not Found."<<endl;
+        cerr<<"File Not Found."<<endl; //cerr = c error
         return;
     }
     string line;
@@ -66,7 +67,7 @@ void SuperMarket::searchJuiceFile(string name){
     }
 
     if(!isFound){
-        cout<<"Oops, This Item Not Found: "<<name<<endl;
+        cerr<<"Oops, This Item Not Found: "<<name<<endl;
     }
     juicesList.close();
 
