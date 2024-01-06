@@ -1,1 +1,6 @@
- 25 koshary 35 1
+ 2 Fish 50 90
+ 4 bannana 45 10
+ 5 tea 70 10
+ 6 homo 20 10
+ 7 tepo 40 10
+ 9 limpo 10 2

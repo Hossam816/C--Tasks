@@ -8,12 +8,13 @@ class SuperMarket
 {
 private:
     int ProductCode;
-    float ProductPrice,ProductDiscount;
+    float ProductPrice;
+    float ProductDiscount;
     string ProductName;
 
 public:
     //declare main functions
-    void appMenu();
+    void appMenu();//main screen
     void admin();
     void buyer();
     void add();
@@ -85,12 +86,12 @@ void SuperMarket::admin()
 {
     m:
     int choice;
-        cout<<"\n\n\n\t\t\t Admin menu";
-        cout<<"\n\t\t\t|_____1) Add the product_____|";
-        cout<<"\n\t\t\t|                            |";
-        cout<<"\n\t\t\t|_____2) Modify the product__|";
-        cout<<"\n\t\t\t|                            |";
-        cout<<"\n\t\t\t|_____3) Delete the product__|";
+    cout<<"\n\n\n\t\t\t Admin menu";
+    cout<<"\n\t\t\t|_____1) Add the product_____|";
+    cout<<"\n\t\t\t|                            |";
+    cout<<"\n\t\t\t|_____2) Modify the product__|";
+    cout<<"\n\t\t\t|                            |";
+    cout<<"\n\t\t\t|_____3) Delete the product__|";
     cout<<"\n\t\t\t|                            |";
     cout<<"\n\t\t\t|_____4) Back to main menu___|";
     cout<<"\n\n\t Please enter your choice ";
@@ -101,13 +102,16 @@ void SuperMarket::admin()
     case 1:
         add();
         break;
+
     case 2:
         edit();
         break;
+
     case 3:
         removeItem();
         break;
-        case 4:
+
+    case 4:
         appMenu();
         break;
     default:
@@ -143,65 +147,12 @@ void SuperMarket::buyer()
 
 }
 
-//void SuperMarket::add()
-//{
-//    m:
-//    fstream ProductData;
-//    int code;
-//    int token = 0;
-//    float price;
-//    float discount;
-//    string name;
-//
-//    cout<<"\n\n\t\t\t Add new product";
-//    cout<<"\n\n\t Product code of the product ";
-//    cin>>ProductCode;
-//    cout<<"\n\n\t Name of the product ";
-//    cin>>ProductName;
-//    cout<<"\n\n\t Price of the product";
-//    cin>>ProductPrice;
-//    cout<<"\n\n\t Discount on product";
-//    cin>>ProductDiscount;
-//
-//    ProductData.open("ShopDatabase.txt", ios::in); // data.open("file path", ios::in mean that the file is open for reading only)
-//    if(!ProductData)
-//    {
-//        ProductData.open("ShopDatabase.txt", ios::app|ios::out);//here we we open the file with two flages 1-ios::app Append mode any output perform will append to the file 2-ios::out Output mode this mean the file is opened for writing
-//        ProductData<<" "<<ProductCode<<" "<<ProductName<<" "<<ProductPrice<<" "<<ProductDiscount;
-//        ProductData.close();
-//    }
-//    else
-//    {
-//        ProductData>>code>>name>>price>>discount; //here initialize index of file becaseu we will use while loop
-//        while(!ProductData.eof())//eof() is end of file it will check every content of the file || The loop continues as long as the end of the file (eof) has not been reached
-//        {
-//            if(code == ProductCode) //if the code == pcode then increas token
-//            {
-//                token ++;
-//            }
-//            ProductData>>code>>name>>price>>discount;//This is important to move on to the next product's data and prevent an infinite loop
-//        }
-//        ProductData.close();
-//
-//
-//        //this fun enable us to write inside the file
-//        if(token==1)
-//            goto m;
-//        else
-//        {
-//            ProductData.open("ShopDatabase.txt", ios::app|ios::out);
-//            ProductData<<" "<<ProductCode<<" "<<ProductName<<" "<<ProductPrice<<" "<<ProductDiscount;
-//            ProductData.close();
-//        }
-//
-//    }
-//     cout<<"\n\n\t\t Inserted Done!";
-//}
-
 void SuperMarket::add() {
+    m:
+
     fstream ProductData;
     int code;
-    int token = 0;
+    int token = 0;  //In the add method, token is used to check whether a product with the same product code (ProductCode) already exists in the "ShopDatabase.txt" file.
     float price;
     float discount;
     string name;
@@ -217,31 +168,43 @@ void SuperMarket::add() {
     cin >> ProductDiscount;
 
     ProductData.open("ShopDatabase.txt", ios::in);
-    if (ProductData) {
-        while (ProductData >> code >> name >> price >> discount) {
-            if (code == ProductCode) {
+
+    if (!ProductData)
+    {
+        ProductData.open("ShopDatabase.txt", ios::app|ios::out);
+        ProductData<<" "<<ProductCode<<" "<<ProductName<<" "<<ProductPrice<<" "<<ProductDiscount;
+        ProductData.close();
+    }
+    else
+    {
+        ProductData>>code>>name>>price>>discount;
+
+        while(!ProductData.eof())
+        {
+            if(code == ProductCode)
+            {
                 token++;
-                break;
             }
+            ProductData>>code>>name>>price>>discount;
         }
         ProductData.close();
-    }
 
-    if (token == 0) {
-        ProductData.open("ShopDatabase.txt", ios::app|ios::out);
-        ProductData << " " << ProductCode << " " << ProductName << " " << ProductPrice << " " << ProductDiscount << "\n";
-        ProductData.close();
-        cout << "\n\n\t\t Record Inserted Successfully!";
-    } else {
-        cout << "\n\n\t\t Record with this Product Code Already Exists!";
+         if(token == 1)
+            goto m;
+        else
+        {
+            ProductData.open("ShopDatabase.txt", ios::app|ios::out);
+            ProductData<<" "<<ProductCode<<" "<<ProductName<<" "<<ProductPrice<<" "<<ProductDiscount<<"\n";
+            ProductData.close();
+        }
     }
+    cout<<"\n\n\t\t Inserted";
 }
 void SuperMarket::edit()
 {
-    fstream ProductData1,ProductData2;
-    //userinputs
+    fstream ProductData,ProductData2;
     int ProductKey;
-    int token = 0;
+    int token = 0; //token is used similarly to track whether the product to be edited is found in the file.
     int code;
     float price;
     float discount;
@@ -252,19 +215,19 @@ void SuperMarket::edit()
 	cin>>ProductKey;
 
 
-	ProductData1.open("ShopDatabase.txt",ios::in);
-	if(!ProductData1)
+	ProductData.open("ShopDatabase.txt",ios::in);
+	if(!ProductData)
     {
         cout<<"\n\nFile Not Found";
     }
     else
     {
 
-        ProductData2.open("ShopDatabase2.txt", ios::app|ios::out);//this a temprary file is created for appending data
+        ProductData2.open("ShopDatabase1.txt", ios::app|ios::out);//this a temprary file is created for appending data
 
-        ProductData1>>ProductCode>>ProductName>>ProductPrice>>ProductDiscount;
+        ProductData>>ProductCode>>ProductName>>ProductPrice>>ProductDiscount;
 
-        while(!ProductData1.eof())
+        while(!ProductData.eof())//end of the line
         {
             //'if ProductKey == ProductCode' the user can enter a new value this data written to 'ProductData2'
             if(ProductKey == ProductCode)
@@ -286,15 +249,15 @@ void SuperMarket::edit()
             {
                 ProductData2<<" "<<ProductCode<<" "<<ProductName<<" "<<ProductPrice<<" "<<ProductDiscount<<"\n";
             }
-            ProductData1>>ProductCode>>ProductName>>ProductPrice>>ProductDiscount;
+            ProductData>>ProductCode>>ProductName>>ProductPrice>>ProductDiscount;
         }
         //Both files are closed after the loop ends.
-        ProductData1.close();
+        ProductData.close();
         ProductData2.close();
 
         //The original file "ShopDatabase.txt" is removed, and the temporary file "ShopDatabase2.txt" is renamed to "ShopDatabase.txt"
         remove("ShopDatabase.txt");
-        rename("ShopDatabase2.txt","ShopDatabase.txt");
+        rename("ShopDatabase1.txt","ShopDatabase.txt");
 
         //'If token' is still 0, it means no record was modified
         if(token==0)
@@ -307,22 +270,22 @@ void SuperMarket::edit()
 
 void SuperMarket::removeItem()
 {
-    fstream ProductData1,ProductData2;//'ProductData1' is for reading the original database file, and 'ProductData2' is for writing to a temporary file.
+    fstream ProductData,ProductData2;//'ProductData1' is for reading the original database file, and 'ProductData2' is for writing to a temporary file.
     int ProductKey;//declares a variable to store the product code of the item to be deleted.
     int token = 0;// initializes a counter to track whether the product has been found and deleted
     cout<<"\n\n\t Delete product";
 	cout<<"\n\n\t Product code :";
 	cin>>ProductKey;
-	ProductData1.open("ShopDatabase.txt",ios::in);
-	if(!ProductData1)
+	ProductData.open("ShopDatabase.txt",ios::in);
+	if(!ProductData)
     {
         cout<<"File Not Found!!";
     }
     else
     {
         ProductData2.open("ShopDatabase1.txt", ios::app|ios::out); //Creating a Temporary File (ProductData2):
-        ProductData1>>ProductCode>>ProductName>>ProductPrice>>ProductDiscount;
-        while(!ProductData1.eof())
+        ProductData>>ProductCode>>ProductName>>ProductPrice>>ProductDiscount;
+        while(!ProductData.eof())
         {
             if(ProductCode==ProductKey)
             {
@@ -334,9 +297,9 @@ void SuperMarket::removeItem()
                 ProductData2<<" "<<ProductCode<<" "<<ProductName<<" "<<ProductPrice<<" "<<ProductDiscount<<"\n";//all the upated details of the product will be enterd with 'ProductData2'
 
             }
-                ProductData1>>ProductCode>>ProductName>>ProductPrice>>ProductDiscount;
+                ProductData>>ProductCode>>ProductName>>ProductPrice>>ProductDiscount;
         }
-        ProductData1.close();
+        ProductData.close();
         ProductData2.close();
         remove("ShopDatabase.txt");
         rename("ShopDatabase1.txt","ShopDatabase.txt");
@@ -353,22 +316,26 @@ void SuperMarket::removeItem()
 void SuperMarket::listItem()
 {
     fstream ProductData;
-    ProductData.open("ShopDatabase.txt",ios::in);//This means the file is opened for reading.
+    ProductData.open("ShopDatabase.txt",ios::in);//This means the file is opened for reading only.
     cout<<"\n\n|___________________________________________________________\n";
-    cout<<"PNumber\t\tName\t\tPrice'n";
+    cout<<"Product Number\t\tName\t\tPrice\n";
     cout<<"\n\n|___________________________________________________________\n";
     ProductData>>ProductCode>>ProductName>>ProductPrice>>ProductDiscount;
+    cout<<ProductCode<<"\t\t"<<ProductName<<"\t\t"<<ProductPrice<<"\n";
+
     while(!ProductData.eof())
     {
-        cout<<ProductName<<"\t\t"<<ProductName<<"\t\t"<<ProductPrice<<"\n";
-        ProductData>>ProductCode>>ProductName>>ProductPrice;
+        ProductData>>ProductCode>>ProductName>>ProductPrice>>ProductDiscount;
+        cout<<ProductCode<<"\t\t"<<ProductName<<"\t\t"<<ProductPrice<<"\n";
+
     }
-    ProductData.close();
+        ProductData.close();
+
 }
 
 
 //method appears to be designed for handling customer purchases and generating a receipt for the items bought
-//
+
 void SuperMarket::receiptItem()
 {
     system("cls"); //clears the console screen
@@ -390,7 +357,7 @@ void SuperMarket::receiptItem()
         ProductData.close();
 
         listItem();// to display available items from the database.
-        cout<<"\n____________________________\n";
+            cout<<"\n____________________________\n";
 			cout<<"\n|                            |";
 			cout<<"\n|    Please place the order  |";
 			cout<<"\n|____________________________|\n";
@@ -418,7 +385,7 @@ void SuperMarket::receiptItem()
 
             //Generate Receipt
             cout<<"\n\n\t\t\t__________RECEIPT______________\n";
-            cout<<"\nProduct Num.\tProduct Name\tQuantity \tPrice \tAmount \tAmount with discount\n";
+            cout<<"\nProduct Number\tProduct Name\tQuantity \tPrice \tAmount \tAmount with discount\n";
 
 
             for(int i=0;i<code;i++)
@@ -431,10 +398,14 @@ void SuperMarket::receiptItem()
                     if(ProductCode == arrCode[i])
                     {
                         //When found, it calculates the amount for each product, applies the discount, and adds it to the total.
-                        amount = ProductPrice*arrQuantity[i];
-                        discount = amount - (amount*discount/100);
-                        total +=discount;
-                        cout<<"\n"<<ProductCode<<"\t\t"<<ProductName<<"\t\t"<<arrQuantity[i]<<"\t\t"<<ProductPrice<<"\t"<<amount<<"\t\t"<<ProductDiscount;
+
+                        float discountPercentage = ProductDiscount; // Assuming ProductDiscount holds the discount percentage.
+                        amount = ProductPrice * arrQuantity[i];
+                        discount = amount * discountPercentage / 100; // Calculate the discount value.
+                        float priceAfterDiscount = amount - discount; // Calculate the price after discount.
+                        total += priceAfterDiscount; // Add the discounted price to the total.
+
+                        cout<<"\n"<<ProductCode<<"\t\t"<<ProductName<<"\t\t"<<arrQuantity[i]<<"\t\t"<<ProductPrice<<"\t"<<amount<<"\t\t"<<ProductDiscount; //The >> operator is the extraction operator in C++. It is used here to read data from the file stream ProductData.
 
                     }
                     ProductData>>ProductCode>>ProductName>>ProductPrice>>ProductDiscount;
@@ -454,6 +425,5 @@ int main()
 
     SuperMarket super;
     super.appMenu();
-return 0;
 }
 
