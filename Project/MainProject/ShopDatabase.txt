@@ -1,3 +1,4 @@
- 2 bashamel1 1000 20
- 1 bestella 1250 20
- 3 Orange 150 10
+ 3 Orange     150 10
+ 6 Apple       90 10
+ 7 seafood    500 12
+ 2 Koshary    500 12

@@ -300,13 +300,12 @@ void SuperMarket::listItem()
     cout<<"Product Number\t\tName\t\tPrice\n";
     cout<<"\n\n|___________________________________________________________\n";
     ProductData>>ProductCode>>ProductName>>ProductPrice>>ProductDiscount;
-    cout<<ProductCode<<"\t\t"<<ProductName<<"\t\t"<<ProductPrice<<"\n";
+    //cout<<ProductCode<<"\t\t"<<ProductName<<"\t\t"<<ProductPrice<<"\n";
 
     while(!ProductData.eof())
     {
+        cout<<ProductCode<<"\t\t\t"<<ProductName<<"\t\t"<<ProductPrice<<"\n";
         ProductData>>ProductCode>>ProductName>>ProductPrice>>ProductDiscount;
-        cout<<ProductCode<<"\t\t"<<ProductName<<"\t\t"<<ProductPrice<<"\n";
-
     }
         ProductData.close();
 
